@@ -1,8 +1,14 @@
-import { PropsWithChildren } from "react";
+interface WrapperProps {
+  children: React.ReactNode;
+  id?: string;
+}
 
-const Wrapper = ({ children }: PropsWithChildren) => {
+const Wrapper = ({ children, id }: WrapperProps) => {
   return (
-    <section className="container mx-auto px-5 md:px-10 py-10 md:py-16 flex flex-col gap-5 md:gap-10">
+    <section
+      id={id}
+      className="container mx-auto px-5 md:px-10 py-10 md:py-16 flex flex-col gap-5 md:gap-10"
+    >
       {children}
     </section>
   );
